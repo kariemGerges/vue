@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id = "app" >
+    {{title}}
+    <div v-for="tweet in tweets" v-bind:class="{cool: tweet.cool}">
+        <h1 v-bind:style="{color: tweet.color}"> {{tweet.name}} </h1>
+        <h3> {{tweet.color}} </h3>
+        <p v-if="tweet.cool"> I love you </p>
+        <p v-else>you are </p>
+    </div>
+    <button v-on:click="likeUp(5)">Click</button>
+    <h3>{{likes}}</h3>
+    <label>
+        <input v-model="form.name" type="text" placeholder="name"/>
+    </label>
+    <input v-model="form.color" type="text" placeholder="color"/>
+    <button v-on:click="submit">Subnit</button>
+    <h3>{{form.color}}</h3>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
